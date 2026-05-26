@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Projekt witryny e-commerce z napojami organicznymi, stworzony z myślą o zapewnieniu świeżych, zdrowych i angażujących zakupów online. Ten interfejs pozwala klientom odkrywać napoje roślinne, odkrywać unikalne smaki, poznawać składniki i kupować ulubione napoje dzięki przejrzystemu i zorientowanemu na konwersję procesowi.
 
+Zabawny i nowoczesny styl wizualny wzbogaca ogólne wrażenia użytkownika, a interaktywne prezentacje produktów, opisy składników, opinie klientów i angażujące sekcje z wezwaniami do działania zapewniają płynne przeglądanie. Przejrzysty układ, wyrazista typografia i żywe obrazy produktów tworzą przyjemne i wiarygodne doświadczenie zakupowe, sprawiając, że odkrywanie zdrowych napojów jest zarówno przyjemne, jak i wygodne
 ## Getting Started
 
 First, run the development server:
