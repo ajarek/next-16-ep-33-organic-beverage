@@ -1,0 +1,3 @@
+# ignore semgrep check
+app/not-found.tsx
+app/loading.tsx
