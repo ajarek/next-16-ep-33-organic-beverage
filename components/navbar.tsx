@@ -43,7 +43,7 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="relative py-1 group transition-colors duration-200 hover:text-oat-yellow"
+              className="relative py-1 group transition-colors duration-200 hover:text-yellow-600"
             >
               {item.label}
               {/* Animowane neobrutalistyczne podkreślenie */}

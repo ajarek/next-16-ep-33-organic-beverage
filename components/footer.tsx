@@ -240,14 +240,14 @@ export default function Footer() {
                     <MapPin className="size-3.5 stroke-[2.5]" />
                   </div>
                   <span className="leading-snug">
-                    ul. Owsiana 12, Warszawa,
+                    ul. Owsiana 12, Kołobrzeg,
                     <br />
-                    00-001
+                    78-100
                   </span>
                 </a>
 
                 <a
-                  href="mailto:czesc@owsianepaliwo.pl"
+                  href="mailto:biuro@owsianepaliwo.pl"
                   className="group flex items-center gap-3 text-sm font-semibold text-neutral-700 hover:text-black transition-colors"
                 >
                   <div className="w-7 h-7 bg-oat-blue neo-border rounded-lg flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
@@ -257,7 +257,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="tel:+48123456789"
+                  href="tel:+48573219230"
                   className="group flex items-center gap-3 text-sm font-semibold text-neutral-700 hover:text-black transition-colors"
                 >
                   <div className="w-7 h-7 bg-oat-green neo-border rounded-lg flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#000] group-hover:shadow-[3px_3px_0px_#000] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
