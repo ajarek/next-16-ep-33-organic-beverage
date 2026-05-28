@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const fredoka = Fredoka({
@@ -43,6 +44,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

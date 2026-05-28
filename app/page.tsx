@@ -2,6 +2,7 @@ import Hero from "@/components/hero";
 import FeaturedProducts from "@/components/featured-products";
 import FlavorExplosion from "@/components/flavor-explosion";
 import Testimonials from "@/components/testimonials";
+import FAQ from "@/components/faq";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <FeaturedProducts />
       <FlavorExplosion />
       <Testimonials />
+      <FAQ />
     </div>
   );
 }

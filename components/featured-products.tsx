@@ -4,8 +4,9 @@ import React, { useState, useRef } from "react"
 import Image from "next/image"
 import { ShoppingCart, ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { products } from "@/data/products-data"
-import { useRouter } from "next/navigation"
-
+import { useCartStore } from "@/store/cartStore"
+import { toast } from "sonner"
+import useRouter from 'next/navigation'
 // Only first 6 products
 const featuredProducts = products.slice(0, 6)
 
@@ -32,11 +33,11 @@ function SparkleIcon({ className }: { className?: string }) {
 }
 
 export default function FeaturedProducts() {
+  const { addItemToCart } = useCartStore()
   const [activeIndex, setActiveIndex] = useState(1)
   const [isDragging, setIsDragging] = useState(false)
   const dragStartX = useRef(0)
   const dragDeltaX = useRef(0)
-  const router = useRouter()
   const prev = () =>
     setActiveIndex(
       (i) => (i - 1 + featuredProducts.length) % featuredProducts.length,
@@ -136,7 +137,9 @@ export default function FeaturedProducts() {
                       : isFar
                         ? "z-0 scale-[0.85] opacity-50 shadow-[3px_3px_0px_#000] w-[180px] sm:w-[200px] hidden sm:block"
                         : "",
-                  isFar && Math.abs(normalizedOffset) >= 3 ? "none !important" : "",
+                  isFar && Math.abs(normalizedOffset) >= 3
+                    ? "none !important"
+                    : "",
                 ].join(" ")}
                 style={{ backgroundColor: bg }}
               >
@@ -206,8 +209,11 @@ export default function FeaturedProducts() {
                       <button
                         id={`add-to-cart-${product.id}`}
                         className='neo-btn-yellow flex-1 rounded-xl flex items-center justify-center gap-2 py-2.5 text-sm font-black cursor-pointer'
-                        onClick={() => router.push(`/cart`)}
-
+                        onClick={() => {
+                          addItemToCart(product)
+                          toast.success('Dodano do koszyka')  
+                        }
+                      }
                       >
                         <ShoppingCart className='size-4 stroke-[2.5]' />
                         Dodaj do koszyka
