@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react"
 import Image from "next/image"
 import { ShoppingCart, ChevronLeft, ChevronRight, Star } from "lucide-react"
-import { products } from "@/data/products"
+import { products } from "@/data/products-data"
 import { useRouter } from "next/navigation"
 
 // Only first 6 products
