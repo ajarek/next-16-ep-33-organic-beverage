@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowRight, Sparkles, Smile, Star, Heart } from "lucide-react";
 
@@ -17,7 +17,9 @@ function SparkleIcon({ className }: { className?: string }) {
   );
 }
 
-export default function Hero() {
+export default function Hero() {  
+  const router = useRouter();
+
   return (
     <section className="relative w-full max-w-7xl mx-auto px-4 py-8 md:px-6 md:py-16 flex flex-col lg:flex-row gap-12 lg:gap-8 items-center justify-between overflow-hidden">
       
@@ -60,12 +62,12 @@ export default function Hero() {
 
         {/* PRZYCISKI AKCJI */}
         <div className="mt-10 flex flex-wrap gap-4 items-center w-full sm:w-auto">
-          <button className="w-full sm:w-auto px-8 py-4 neo-btn bg-oat-yellow text-black text-lg font-black rounded-xl flex items-center justify-center gap-2 group cursor-pointer">
+          <button className="w-full sm:w-auto px-8 py-4 neo-btn bg-oat-yellow text-black text-lg font-black rounded-xl flex items-center justify-center gap-2 group cursor-pointer" onClick={() => router.push("/sklep")}>
             Kup Teraz
             <ArrowRight className="size-5 group-hover:translate-x-1.5 transition-transform stroke-width-3" />
           </button>
           
-          <button className="w-full sm:w-auto px-8 py-4 neo-btn bg-white text-black text-lg font-black rounded-xl flex items-center justify-center gap-2 group cursor-pointer hover:bg-neutral-50">
+          <button className="w-full sm:w-auto px-8 py-4 neo-btn bg-white text-black text-lg font-black rounded-xl flex items-center justify-center gap-2 group cursor-pointer hover:bg-neutral-50" onClick={() => router.push("/przepisy")}>
             Poznaj Smaki
             <ArrowRight className="size-5 group-hover:translate-x-1.5 transition-transform stroke-width-3" />
           </button>

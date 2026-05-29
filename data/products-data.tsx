@@ -40,7 +40,7 @@ export const products: Product[] = [
     {
         id:"5",
         name:"ALPRO Barista Owies",
-        description:"Napój owsiany z dodatkiem wapnia i witamin B2, B12 i D, bez laktozy",
+        description:"Napój owsiany z dodatkiem wapnia i witamin B2, B12 i D",
         image:"/ALPRO-Barista.webp",
         price:19.99,
         quantity:1,
@@ -85,7 +85,7 @@ export const products: Product[] = [
     {
         id:"10",
         name:"ALPRO-Barista",
-        description:"Napój sojowy o smaku waniliowym z dodatkiem wapnia i witaminą B12, bez glutenu, bez laktozy",
+        description:"Napój sojowy o smaku waniliowym z witaminą B12",
         image:"/ALPRO-Barista.webp",
         price:24.99,
         quantity:1,

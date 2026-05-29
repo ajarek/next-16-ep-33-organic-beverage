@@ -1,22 +1,34 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
-import Link from "next/link";
-import { Search, ShoppingCart, User, Menu, X, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React, { useState } from "react"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { Search, ShoppingCart, User, Menu, X, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/components/ui/sheet"
 import { useCartStore } from "@/store/cartStore"
 
 export default function Navbar() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const {items} = useCartStore();
-  const cartCount= items.reduce((acc, item)=> acc + item.quantity, 0)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [searchValue, setSearchValue] = useState("")
+  const router = useRouter()
+  const { items } = useCartStore()
+  const cartCount = items.reduce((acc, item) => acc + item.quantity, 0)
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchValue.trim()) {
+      router.push(`/sklep?search=${encodeURIComponent(searchValue.trim())}`)
+      setIsSearchOpen(false)
+      setSearchValue("")
+    }
+  }
 
   const menuItems = [
     { label: "Sklep", href: "/sklep" },
@@ -24,56 +36,57 @@ export default function Navbar() {
     { label: "O nas", href: "/o-nas" },
     { label: "Przepisy", href: "/przepisy" },
     { label: "Ekologia", href: "/ekologia" },
-  ];
+  ]
 
   return (
-    <header className="w-full max-w-7xl mx-auto px-4 pt-6 md:px-6 md:pt-8 z-50 sticky top-0 bg-transparent">
+    <header className='w-full max-w-7xl mx-auto px-4 pt-6 md:px-6 md:pt-8 z-50 sticky top-0 bg-transparent'>
       {/* Główny kontener paska nawigacji */}
-      <div className="w-full bg-background/80 backdrop-blur-sm neo-border rounded-full py-3 px-6 md:px-8 flex items-center justify-between shadow-[5px_5px_0px_0px_#000000] hover:shadow-[7px_7px_0px_0px_#000000] transition-all duration-300">
-        
+      <div className='w-full bg-background/80 backdrop-blur-sm neo-border rounded-full py-3 px-6 md:px-8 flex items-center justify-between shadow-[5px_5px_0px_0px_#000000] hover:shadow-[7px_7px_0px_0px_#000000] transition-all duration-300'>
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-heading text-2xl md:text-3xl font-black tracking-tighter text-black select-none group-hover:scale-105 transition-transform duration-200">
+        <Link href='/' className='flex items-center gap-2 group'>
+          <span className='font-heading text-2xl md:text-3xl font-black tracking-tighter text-black select-none group-hover:scale-105 transition-transform duration-200'>
             Owsiane
-            <span className="text-oat-yellow drop-shadow-[1.5px_1.5px_0px_#000000]">Paliwo</span>
+            <span className='text-oat-yellow drop-shadow-[1.5px_1.5px_0px_#000000]'>
+              Paliwo
+            </span>
           </span>
         </Link>
 
         {/* NAWIGACJA DESKTOP */}
-        <nav className="hidden lg:flex items-center gap-8 font-semibold text-sm xl:text-base text-black">
+        <nav className='hidden lg:flex items-center gap-8 font-semibold text-sm xl:text-base text-black'>
           {menuItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="relative py-1 group transition-colors duration-200 hover:text-yellow-600"
+              className='relative py-1 group transition-colors duration-200 hover:text-yellow-600'
             >
               {item.label}
               {/* Animowane neobrutalistyczne podkreślenie */}
-              <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-black transition-all duration-200 group-hover:w-full"></span>
+              <span className='absolute bottom-0 left-0 w-0 h-[3px] bg-black transition-all duration-200 group-hover:w-full'></span>
             </Link>
           ))}
         </nav>
 
         {/* PRZYCISKI AKCJI (PRAWA STRONA) */}
-        <div className="flex items-center gap-2 md:gap-3">
+        <div className='flex items-center gap-2 md:gap-3'>
           {/* Przycisk Wyszukaj */}
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer"
-            aria-label="Szukaj"
+            className='w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer'
+            aria-label='Szukaj'
           >
-            <Search className="size-4 md:size-5 stroke-[2.5]" />
+            <Search className='size-4 md:size-5 stroke-[2.5]' />
           </button>
 
           {/* Przycisk Koszyka */}
           <Link
-            href="/koszyk"
-            className="relative w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer group"
+            href='/koszyk'
+            className='relative w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer group'
           >
-            <ShoppingCart className="size-4 md:size-5 stroke-[2.5]" />
+            <ShoppingCart className='size-4 md:size-5 stroke-[2.5]' />
             {/* Licznik w koszyku */}
             {cartCount > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 size-5 bg-oat-pink text-white rounded-full neo-border text-[10px] font-bold flex items-center justify-center shadow-[1px_1px_0px_#000] group-hover:scale-110 transition-transform">
+              <span className='absolute -top-1.5 -right-1.5 size-5 bg-oat-pink text-white rounded-full neo-border text-[10px] font-bold flex items-center justify-center shadow-[1px_1px_0px_#000] group-hover:scale-110 transition-transform'>
                 {cartCount}
               </span>
             )}
@@ -81,62 +94,66 @@ export default function Navbar() {
 
           {/* Przycisk Konta Użytkownika */}
           <Link
-            href="/konto"
-            className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer"
+            href='/konto'
+            className='w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer'
           >
-            <User className="size-4 md:size-5 stroke-[2.5]" />
+            <User className='size-4 md:size-5 stroke-[2.5]' />
           </Link>
 
           {/* MENU MOBILNE (TRIGGER) */}
           <Sheet>
             <SheetTrigger asChild>
               <Button
-                className="w-9 h-9 md:w-10 md:h-10 rounded-lg neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex lg:hidden items-center justify-center cursor-pointer"
-                aria-label="Otwórz menu"
+                className='w-9 h-9 md:w-10 md:h-10 rounded-lg neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex lg:hidden items-center justify-center cursor-pointer'
+                aria-label='Otwórz menu'
               >
-                <Menu className="size-4 md:size-5 stroke-[2.5]" />
+                <Menu className='size-4 md:size-5 stroke-[2.5]' />
               </Button>
             </SheetTrigger>
             <SheetContent
-              side="right"
-              className="w-[280px] sm:w-[350px] bg-primary border-l-[3.5px] border-black p-6 flex flex-col justify-between"
+              side='right'
+              className='w-[280px] sm:w-[350px] bg-primary border-l-[3.5px] border-black p-6 flex flex-col justify-between'
               showCloseButton={false}
             >
-              <div className="flex flex-col gap-8">
-                <SheetHeader className="flex flex-row items-center justify-between p-0">
-                  <SheetTitle className="font-heading text-2xl font-black text-black">
-                    OAT<span className="text-oat-yellow">FUEL</span>
+              <div className='flex flex-col gap-8'>
+                <SheetHeader className='flex flex-row items-center justify-between p-0'>
+                  <SheetTitle className='font-heading text-2xl font-black text-black'>
+                    OAT<span className='text-oat-yellow'>FUEL</span>
                   </SheetTitle>
                   <SheetTrigger asChild>
-                    <button className="p-2 rounded-lg bg-white border-2 border-black shadow-[2px_2px_0px_#000] hover:shadow-[3px_3px_0px_#000] active:translate-x-px active:translate-y-px transition-all">
-                      <X className="size-4 stroke-[2.5]" />
+                    <button className='p-2 rounded-lg bg-white border-2 border-black shadow-[2px_2px_0px_#000] hover:shadow-[3px_3px_0px_#000] active:translate-x-px active:translate-y-px transition-all'>
+                      <X className='size-4 stroke-[2.5]' />
                     </button>
                   </SheetTrigger>
                 </SheetHeader>
 
-                <nav className="flex flex-col gap-4 font-bold text-lg text-black mt-4">
+                <nav className='flex flex-col gap-4 font-bold text-lg text-black mt-4'>
                   {menuItems.map((item) => (
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="flex items-center justify-between p-3 rounded-xl  border-2 border-black shadow-[3px_3px_0px_#000] hover:translate-x-1 transition-transform"
+                      className='flex items-center justify-between p-3 rounded-xl  border-2 border-black shadow-[3px_3px_0px_#000] hover:translate-x-1 transition-transform'
                     >
                       <span>{item.label}</span>
-                      <ArrowRight className="size-4 text-oat-yellow stroke-width-3" />
+                      <ArrowRight className='size-4 text-oat-yellow stroke-width-3' />
                     </Link>
                   ))}
                 </nav>
               </div>
 
               {/* Dolna sekcja w menu mobilnym */}
-              <div className="flex flex-col gap-4">
-                <div className="p-4 rounded-xl border-2 border-black shadow-[3px_3px_0px_#000] text-center">
-                  <p className="font-bold text-sm mb-1 text-black">🔥 Promocja Dnia!</p>
-                  <p className="text-xs text-neutral-600">Kup 2 mleka owsiane, a 3. dostaniesz za pół ceny!</p>
+              <div className='flex flex-col gap-4'>
+                <div className='p-4 rounded-xl border-2 border-black shadow-[3px_3px_0px_#000] text-center'>
+                  <p className='font-bold text-sm mb-1 text-black'>
+                    🔥 Promocja Dnia!
+                  </p>
+                  <p className='text-xs text-neutral-600'>
+                    Kup 2 mleka owsiane, a 3. dostaniesz za pół ceny!
+                  </p>
                 </div>
                 <Link
-                  href="/sklep"
-                  className="w-full py-3 text-center rounded-xl bg-oat-yellow text-black border-2 border-black shadow-[4px_4px_0px_#000] font-black text-sm block active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#000] transition-all"
+                  href='/sklep'
+                  className='w-full py-3 text-center rounded-xl bg-oat-yellow text-black border-2 border-black shadow-[4px_4px_0px_#000] font-black text-sm block active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#000] transition-all'
                 >
                   KUP TERAZ
                 </Link>
@@ -148,22 +165,31 @@ export default function Navbar() {
 
       {/* PASEK WYSZUKIWANIA (ESTETYCZNY ROZWIJANY BANER) */}
       {isSearchOpen && (
-        <div className="w-full max-w-xl mx-auto mt-4 px-4 py-3 bg-white neo-border rounded-2xl shadow-[4px_4px_0px_0px_#000] flex items-center gap-3 animate-in fade-in slide-in-from-top-3 duration-200">
-          <Search className="size-5 text-neutral-400 stroke-[2.5]" />
+        <form
+          onSubmit={handleSearch}
+          className='w-full max-w-xl mx-auto mt-4 px-4 py-3 bg-white neo-border rounded-2xl shadow-[4px_4px_0px_0px_#000] flex items-center gap-3 animate-in fade-in slide-in-from-top-3 duration-200'
+        >
+          <Search className='size-5 text-neutral-400 stroke-[2.5]' />
           <input
-            type="text"
-            placeholder="Czego dzisiaj szukasz? (np. mleko czekoladowe)"
-            className="flex-1 bg-transparent border-none outline-none font-medium text-black placeholder-neutral-400 text-sm md:text-base"
+            type='text'
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            placeholder='Czego dzisiaj szukasz? (np. mleko czekoladowe)'
+            className='flex-1 bg-transparent border-none outline-none font-medium text-black placeholder-neutral-400 text-sm md:text-base'
             autoFocus
           />
           <Button
-            onClick={() => setIsSearchOpen(false)}
-            className="px-3 py-1 bg-muted hover:bg-muted/80 rounded-lg text-xs font-bold text-red-400 border border-muted"
+            type='button'
+            onClick={() => {
+              setIsSearchOpen(false)
+              setSearchValue("")
+            }}
+            className='px-3 py-1 bg-muted hover:bg-muted/80 rounded-lg text-xs font-bold text-red-400 border border-muted'
           >
-           x Zamknij
+            x Zamknij
           </Button>
-        </div>
+        </form>
       )}
     </header>
-  );
+  )
 }

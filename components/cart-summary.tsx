@@ -46,7 +46,7 @@ const CartSummary = () => {
         </div>
       </div>
 
-      <button className="w-full neo-btn-yellow py-4 flex items-center justify-center gap-2 text-lg uppercase tracking-wider group">
+      <button className="w-full neo-btn-yellow py-4 flex items-center justify-center gap-2 text-lg uppercase tracking-wider group cursor-pointer">
         Przejdź do kasy
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
       </button>

@@ -28,12 +28,12 @@ const CartItem = ({ item }: { item: Product }) => {
           {item.price.toFixed(2)} zł / szt.
         </p>
       </div>
-
+    
       {/* Quantity Controls */}
       <div className='flex items-center gap-3 bg-oat-cream neo-border-sm p-1'>
         <button
           onClick={() => decrement(item.id)}
-          className='p-1 hover:bg-oat-yellow transition-colors rounded'
+          className='p-1 hover:bg-oat-yellow transition-colors rounded cursor-pointer'
           aria-label='Zmniejsz ilość'
         >
           <Minus className='w-4 h-4' />
@@ -43,7 +43,7 @@ const CartItem = ({ item }: { item: Product }) => {
         </span>
         <button
           onClick={() => increment(item.id)}
-          className='p-1 hover:bg-oat-yellow transition-colors rounded'
+          className='p-1 hover:bg-oat-yellow transition-colors rounded cursor-pointer'
           aria-label='Zwiększ ilość'
         >
           <Plus className='w-4 h-4' />
@@ -59,7 +59,7 @@ const CartItem = ({ item }: { item: Product }) => {
         </div>
         <button
           onClick={() => removeItemFromCart(item.id)}
-          className='p-2 bg-destructive text-destructive-foreground neo-border-sm hover:bg-red-600 transition-colors'
+          className='p-2 bg-destructive text-destructive-foreground neo-border-sm hover:bg-red-600 transition-colors cursor-pointer'
           aria-label='Usuń z koszyka'
         >
           <Trash2 className='w-5 h-5' />
