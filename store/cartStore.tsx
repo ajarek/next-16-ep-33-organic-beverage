@@ -5,10 +5,10 @@ import type { Product } from "@/types/typeProduct"
 type CartState = {
   items: Product[]
   addItemToCart: (item: Product) => void
-  removeItemFromCart: (id: number) => void
+  removeItemFromCart: (id: string | number) => void
   total: () => number
-  increment: (id: number) => void
-  decrement: (id: number) => void
+  increment: (id: string | number) => void
+  decrement: (id: string | number) => void
   removeAllFromCart: () => void
 }
 
@@ -47,7 +47,7 @@ export const useCartStore = create<CartState>()(
           0,
         ),
 
-      increment: (id: number) =>
+      increment: (id: string | number) =>
         set((state) => ({
           items: state.items.map((item) =>
             item.id === id
@@ -55,7 +55,7 @@ export const useCartStore = create<CartState>()(
               : item,
           ),
         })),
-      decrement: (id: number) =>
+      decrement: (id: string | number) =>
         set((state) => ({
           items: state.items.map((item) =>
             item.id === id

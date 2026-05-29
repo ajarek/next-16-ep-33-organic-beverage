@@ -1,4 +1,6 @@
-export const products = [
+import { Product } from "@/types/typeProduct"
+
+export const products: Product[] = [
     {
         id:"1",
         name:"Al Natura Wanilia",

@@ -96,7 +96,7 @@ export default function Hero() {
               alt="Dziewczyna pijąca Oatfuel"
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-500"
-              sizes="280px"
+             sizes="(max-width: 768px) 100vw, 33vw"
               priority
             />
           </div>
@@ -146,7 +146,7 @@ export default function Hero() {
                 alt="Aksamitne mleko owsiane" 
                 fill 
                 className="object-cover group-hover:scale-105 transition-transform" 
-                sizes="220px"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
 
@@ -178,7 +178,7 @@ export default function Hero() {
               alt="Para pijąca napój na schodach"
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-500"
-              sizes="260px"
+             sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
           <div className="p-3 bg-white text-black font-extrabold text-center text-xs md:text-sm border-t border-black">
@@ -215,7 +215,7 @@ export default function Hero() {
                 alt="Ziarna kakao i czekolada" 
                 fill 
                 className="object-cover group-hover:scale-105 transition-transform" 
-                sizes="180px"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
 

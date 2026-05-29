@@ -6,7 +6,7 @@ import { ShoppingCart, ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { products } from "@/data/products-data"
 import { useCartStore } from "@/store/cartStore"
 import { toast } from "sonner"
-import useRouter from 'next/navigation'
+
 // Only first 6 products
 const featuredProducts = products.slice(0, 6)
 
@@ -211,9 +211,8 @@ export default function FeaturedProducts() {
                         className='neo-btn-yellow flex-1 rounded-xl flex items-center justify-center gap-2 py-2.5 text-sm font-black cursor-pointer'
                         onClick={() => {
                           addItemToCart(product)
-                          toast.success('Dodano do koszyka')  
-                        }
-                      }
+                          toast.success("Dodano do koszyka")
+                        }}
                       >
                         <ShoppingCart className='size-4 stroke-[2.5]' />
                         Dodaj do koszyka

@@ -11,10 +11,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useCartStore } from "@/store/cartStore"
 
 export default function Navbar() {
-  const [cartCount, setCartCount] = useState(2); // Domyślnie 2 przedmioty w koszyku
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const {items} = useCartStore();
+  const cartCount= items.reduce((acc, item)=> acc + item.quantity, 0)
 
   const menuItems = [
     { label: "Sklep", href: "/sklep" },
