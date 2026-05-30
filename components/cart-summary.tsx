@@ -1,9 +1,14 @@
 "use client"
 
 import { useCartStore } from "@/store/cartStore"
+import Link from "next/link"
 import { ArrowRight, ShoppingBag } from "lucide-react"
 
-const CartSummary = () => {
+type CartSummaryProps = {
+  checkoutHref?: string
+}
+
+const CartSummary = ({ checkoutHref }: CartSummaryProps) => {
   const { total, items } = useCartStore()
   const totalPrice = total()
   const shipping = totalPrice > 100 ? 0 : 15
@@ -46,10 +51,23 @@ const CartSummary = () => {
         </div>
       </div>
 
-      <button className="w-full neo-btn-yellow py-4 flex items-center justify-center gap-2 text-lg uppercase tracking-wider group cursor-pointer">
-        Przejdź do kasy
-        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-      </button>
+      {checkoutHref ? (
+        <Link
+          href={checkoutHref}
+          className="w-full neo-btn-yellow py-4 flex items-center justify-center gap-2 text-lg uppercase tracking-wider group cursor-pointer text-center"
+        >
+          Przejdź do kasy
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      ) : (
+        <button
+          type="button"
+          className="w-full neo-btn-yellow py-4 flex items-center justify-center gap-2 text-lg uppercase tracking-wider group cursor-pointer"
+        >
+          Przejdź do kasy
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </button>
+      )}
 
       <p className="text-center text-xs mt-4 text-muted-foreground font-medium">
         Najniższa cena w ciągu ostatnich 30 dni: {totalPrice.toFixed(2)} zł

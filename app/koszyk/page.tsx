@@ -20,6 +20,7 @@ function SparkleIcon({ className }: { className?: string }) {
 
 const CartPage = () => {
     const { items } = useCartStore()
+    const shouldShowCart = items.length > 0
 
     return (
         <div className="min-h-[80vh] w-full py-12 md:py-20 container mx-auto px-4">
@@ -44,7 +45,7 @@ const CartPage = () => {
                 )}
             </div>
 
-            {items.length > 0 ? (
+            {shouldShowCart ? (
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
                     {/* Items List */}
                     <div className="lg:col-span-2 flex flex-col gap-6">
@@ -55,7 +56,7 @@ const CartPage = () => {
 
                     {/* Summary */}
                     <div className="lg:col-span-1">
-                        <CartSummary />
+                        <CartSummary checkoutHref="/koszyk/kasa" />
                     </div>
                 </div>
             ) : (
