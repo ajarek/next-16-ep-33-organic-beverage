@@ -13,6 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { useCartStore } from "@/store/cartStore"
+import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs"
 
 export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -62,7 +63,7 @@ export default function Navbar() {
             >
               {item.label}
               {/* Animowane neobrutalistyczne podkreślenie */}
-              <span className='absolute bottom-0 left-0 w-0 h-[3px] bg-black transition-all duration-200 group-hover:w-full'></span>
+              <span className='absolute bottom-0 left-0 w-0 h-0.75 bg-black transition-all duration-200 group-hover:w-full'></span>
             </Link>
           ))}
         </nav>
@@ -93,13 +94,18 @@ export default function Navbar() {
           </Link>
 
           {/* Przycisk Konta Użytkownika */}
-          <Link
-            href='/konto'
-            className='w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer'
-          >
-            <User className='size-4 md:size-5 stroke-[2.5]' />
-          </Link>
-
+          
+            <Show when="signed-out">
+              <SignInButton />
+              <SignUpButton>
+                <button className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer" aria-label="Zarejestruj się">
+                 <User className='size-4 md:size-5 stroke-[2.5]' />
+                </button>
+              </SignUpButton>
+            </Show>
+            <Show when="signed-in">
+              <UserButton />
+            </Show>
           {/* MENU MOBILNE (TRIGGER) */}
           <Sheet>
             <SheetTrigger asChild>
@@ -112,7 +118,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent
               side='right'
-              className='w-[280px] sm:w-[350px] bg-primary border-l-[3.5px] border-black p-6 flex flex-col justify-between'
+              className='w-70 sm:w-87.5 bg-primary border-l-[3.5px] border-black p-6 flex flex-col justify-between'
               showCloseButton={false}
             >
               <div className='flex flex-col gap-8'>
@@ -153,7 +159,7 @@ export default function Navbar() {
                 </div>
                 <Link
                   href='/sklep'
-                  className='w-full py-3 text-center rounded-xl bg-oat-yellow text-black border-2 border-black shadow-[4px_4px_0px_#000] font-black text-sm block active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#000] transition-all'
+                  className='w-full py-3 text-center rounded-xl bg-oat-yellow text-black border-2 border-black shadow-[4px_4px_0px_#000] font-black text-sm block active:translate-x-0.5 active:translate-y-0.5 active:shadow-[2px_2px_0px_#000] transition-all'
                 >
                   KUP TERAZ
                 </Link>

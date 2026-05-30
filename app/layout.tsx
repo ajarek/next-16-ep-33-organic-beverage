@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner"
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const fredoka = Fredoka({
@@ -39,12 +40,14 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, fredoka.variable)}
     >
       <body className="min-h-full flex flex-col bg-background wavy-bg selection:bg-oat-yellow selection:text-black">
+        <ClerkProvider>
         <Navbar />
         <main className="flex-1 w-full relative z-10 flex flex-col justify-center">
           {children}
         </main>
         <Footer />
         <Toaster />
+        </ClerkProvider>
       </body>
     </html>
   );
