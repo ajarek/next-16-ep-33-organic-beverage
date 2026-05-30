@@ -94,18 +94,20 @@ export default function Navbar() {
           </Link>
 
           {/* Przycisk Konta Użytkownika */}
-          
-            <Show when="signed-out">
-              <SignInButton />
-              <SignUpButton>
-                <button className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer" aria-label="Zarejestruj się">
-                 <User className='size-4 md:size-5 stroke-[2.5]' />
-                </button>
-              </SignUpButton>
-            </Show>
-            <Show when="signed-in">
-              <UserButton />
-            </Show>
+
+          <Show when='signed-out'>
+            <SignUpButton>
+              <button
+                className='w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer'
+                aria-label='Zarejestruj się'
+              >
+                <User className='size-4 md:size-5 stroke-[2.5]' />
+              </button>
+            </SignUpButton>
+          </Show>
+          <Show when='signed-in'>
+            <UserButton />
+          </Show>
           {/* MENU MOBILNE (TRIGGER) */}
           <Sheet>
             <SheetTrigger asChild>
