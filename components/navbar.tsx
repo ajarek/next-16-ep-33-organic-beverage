@@ -32,8 +32,8 @@ export default function Navbar() {
 
   const menuItems = [
     { label: "Sklep", href: "/sklep" },
-    { label: "Smaki", href: "/smaki" },
     { label: "O nas", href: "/o-nas" },
+    { label: "Kontakt", href: "/kontakt" },
     { label: "Przepisy", href: "/przepisy" },
     { label: "Ekologia", href: "/ekologia" },
   ]
