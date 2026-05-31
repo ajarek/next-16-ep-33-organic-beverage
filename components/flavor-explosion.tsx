@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 
@@ -53,9 +52,8 @@ function FlavorCard({
     <div
       onClick={() => router.push("/shop")}
       style={{ backgroundColor: bgColor }}
-      className='group relative rounded-[32px] border-3 border-black shadow-[6px_6px_0px_#000] p-6 pb-0 flex flex-col justify-between overflow-hidden h-[460px] cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-[9px_9px_0px_#000]'
+      className='group relative rounded-[32px] border-3 border-black shadow-[6px_6px_0px_#000] p-6 pb-0 flex flex-col justify-between overflow-hidden h-115 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-[9px_9px_0px_#000]'
     >
-
       <div className='flex flex-col text-left z-10'>
         <h3
           className={`font-heading font-black text-3xl md:text-[34px] tracking-tight mb-2 ${textColorClass}`}
@@ -69,13 +67,12 @@ function FlavorCard({
         </p>
       </div>
 
-      <div className='relative flex-1 w-full flex items-center justify-center min-h-[190px] z-10'>
-
+      <div className='relative flex-1 w-full flex items-center justify-center min-h-47.5 z-10'>
         {hasCircleBlob && (
-          <div className='absolute top-[15%] right-[10%] w-[130px] h-[130px] rounded-full bg-[#FFE89E] opacity-75 -z-10 group-hover:scale-110 transition-transform duration-500' />
+          <div className='absolute top-[15%] right-[10%] w-32.5 h-32.5 rounded-full bg-[#FFE89E] opacity-75 -z-10 group-hover:scale-110 transition-transform duration-500' />
         )}
 
-        <div className='relative w-full h-[250px] md:h-[170px] select-none group-hover:scale-108 transition-transform duration-500'>
+        <div className='relative w-full h-62.5 md:h-42.5 select-none group-hover:scale-108 transition-transform duration-500'>
           <Image
             src={imageSrc}
             alt={title}
@@ -99,7 +96,6 @@ function FlavorCard({
 export default function FlavorExplosion() {
   return (
     <section className='relative w-full max-w-7xl mx-auto px-4 py-16 md:py-24 overflow-hidden text-center'>
-
       <svg
         className='absolute inset-0 w-full h-full -z-20 pointer-events-none overflow-hidden hidden md:block'
         viewBox='0 0 1440 800'
@@ -122,7 +118,6 @@ export default function FlavorExplosion() {
       <StarDoodle className='absolute top-[8%] left-[4%] w-24 h-24 text-[#EADEC6] opacity-35 -z-10 animate-float pointer-events-none hidden lg:block' />
 
       <div className='flex flex-col items-center mb-12 md:mb-16 relative z-10'>
-
         <div className='inline-flex items-center gap-1.5 bg-oat-yellow neo-border rounded-xl px-5 py-1.5 shadow-[3.5px_3.5px_0px_#000] mb-6 hover:scale-105 transition-transform duration-200'>
           <SparkleIcon className='size-3.5' />
           <span className='font-heading font-black text-xs md:text-sm uppercase tracking-widest text-black'>
@@ -131,7 +126,6 @@ export default function FlavorExplosion() {
         </div>
 
         <div className='relative inline-flex items-center justify-center'>
-
           <div className='absolute -left-10 md:-left-12 -top-6 hidden sm:flex flex-col gap-1 -rotate-12deg animate-wiggle'>
             <span className='w-1.5 h-5 bg-oat-blue rounded-full block' />
             <span className='w-1.5 h-5 bg-oat-blue rounded-full block rotate-25deg' />
@@ -145,7 +139,6 @@ export default function FlavorExplosion() {
       </div>
 
       <div className='relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto mt-4 px-2'>
-
         <FlavorCard
           title='Czekolada'
           subtext='Aksamitne kakao połączone z najwyższej jakości owsem premium'

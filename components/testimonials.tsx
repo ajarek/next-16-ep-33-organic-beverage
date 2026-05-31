@@ -31,7 +31,6 @@ function TestimonialCard({
   motto,
   index,
 }: TestimonialCardProps) {
-
   const cardStyles = [
     {
       bg: "#F3CE56",
@@ -62,11 +61,9 @@ function TestimonialCard({
         backgroundImage: `radial-gradient(${style.dotsColor} 2px, transparent 2px)`,
         backgroundSize: "16px 16px",
       }}
-      className='relative rounded-[32px] border-3 border-black shadow-[6px_6px_0px_#000] p-6 pt-9 flex flex-col justify-between overflow-visible min-h-[250px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0px_#000]'
+      className='relative rounded-[32px] border-3 border-black shadow-[6px_6px_0px_#000] p-6 pt-9 flex flex-col justify-between overflow-visible min-h-62.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0px_#000]'
     >
-
       <div className='absolute -top-6 left-6 z-10 flex items-center'>
-
         <div
           style={{ backgroundColor: style.avatarBg }}
           className={`w-12 h-12 rounded-full border-3 border-black flex items-center justify-center font-heading font-black text-sm md:text-base shadow-[2px_2px_0px_#000] z-20 ${style.avatarText}`}
@@ -172,9 +169,7 @@ export default function Testimonials() {
 
   return (
     <section className='relative w-full max-w-7xl mx-auto px-4 py-16 md:py-24 text-center overflow-visible z-20'>
-
       <div className='relative w-full neo-border-lg rounded-[48px] bg-oat-cream p-8 py-16 md:p-12 md:py-20 shadow-[8px_8px_0px_#000] overflow-visible'>
-
         <div className='absolute -top-18px left-[15%] w-16 h-10 bg-oat-cream border-t-4.5 border-black rounded-t-full -z-10' />
         <div className='absolute -top-28px left-[35%] w-24 h-16 bg-oat-cream border-t-4.5 border-black rounded-t-full -z-10' />
         <div className='absolute -top-24px left-[60%] w-20 h-14 bg-oat-cream border-t-4.5 border-black rounded-t-full -z-10' />

@@ -1,94 +1,84 @@
 import { Product } from "@/types/typeProduct"
 
 export const products: Product[] = [
-    {
-        id:"1",
-        name:"Al Natura Wanilia",
-        description:"100% wegański, bez dodatku cukru, bezglutenowy",
-        image:"/ALNATURA-Wanilia.webp",
-        price:19.99,
-        quantity:1,
-
-    },
-    {
-        id:"2",
-        name:"Almond Breeze Napój Migdałowy Waniliowy",
-        description:"100% wegański, bez dodatku cukru, bezglutenowy",
-        image:"/ALMOND-BREEZE.webp",
-        price:24.99,
-        quantity:1,
-
-    },
-    {
-        id:"3",
-        name:"ALNATURA",
-        description:"100% wegański,napój kokosowy, BIO",
-        image:"/ALNATURA.webp",
-        price:21.99,
-        quantity:1,
-
-    },
-    {
-        id:"4",
-        name:"ALPRO Barista Migdał",
-        description:"Napój migdałowy z dodatkiem wapnia, bez glutenu, bez laktozy",
-        image:"/ALPRO-Barista-Migdał.webp",
-        price:29.99,
-        quantity:1,
-
-    },
-    {
-        id:"5",
-        name:"ALPRO Barista Owies",
-        description:"Napój owsiany z dodatkiem wapnia i witamin B2, B12 i D",
-        image:"/ALPRO-Barista.webp",
-        price:19.99,
-        quantity:1,
-
-    },
-    {
-        id:"6",
-        name:"ENERBIO napój owsiany",
-        description:"Napój owsiany z dodatkiem witamin B2, B12 i D",
-        image:"/ENERBIO.webp",
-        price:19.99,
-        quantity:1,
-
-    },
-     {
-        id:"7",
-        name:"INKA Barista",
-        description:"Napój owsiany, bez dodatku cukru, UHT",
-        image:"/INKA-Barista.webp",
-        price:25.99,
-        quantity:1,
-
-    },
-     {
-        id:"8",
-        name:"INKA Kokosowa",
-        description:"Napój kokosowy, bez dodatku cukru, UHT",
-        image:"/INKA-Kokosowa.webp",
-        price:25.99,
-        quantity:1,
-
-    },
-    {
-        id:"9",
-        name:"OATLY",
-        description:"Napój owsiany dla baristów, z dodatkiem witamin i minerałów",
-        image:"/OATLY.webp",
-        price:24.99,
-        quantity:1,
-
-    },
-    {
-        id:"10",
-        name:"ALPRO-Barista",
-        description:"Napój sojowy o smaku waniliowym z witaminą B12",
-        image:"/ALPRO-Barista.webp",
-        price:24.99,
-        quantity:1,
-
-    },
+  {
+    id: "1",
+    name: "Al Natura Wanilia",
+    description: "100% wegański, bez dodatku cukru, bezglutenowy",
+    image: "/ALNATURA-Wanilia.webp",
+    price: 19.99,
+    quantity: 1,
+  },
+  {
+    id: "2",
+    name: "Almond Breeze Napój Migdałowy Waniliowy",
+    description: "100% wegański, bez dodatku cukru, bezglutenowy",
+    image: "/ALMOND-BREEZE.webp",
+    price: 24.99,
+    quantity: 1,
+  },
+  {
+    id: "3",
+    name: "ALNATURA",
+    description: "100% wegański,napój kokosowy, BIO",
+    image: "/ALNATURA.webp",
+    price: 21.99,
+    quantity: 1,
+  },
+  {
+    id: "4",
+    name: "ALPRO Barista Migdał",
+    description: "Napój migdałowy z dodatkiem wapnia, bez glutenu, bez laktozy",
+    image: "/ALPRO-Barista-Migdał.webp",
+    price: 29.99,
+    quantity: 1,
+  },
+  {
+    id: "5",
+    name: "ALPRO Barista Owies",
+    description: "Napój owsiany z dodatkiem wapnia i witamin B2, B12 i D",
+    image: "/ALPRO-Barista.webp",
+    price: 19.99,
+    quantity: 1,
+  },
+  {
+    id: "6",
+    name: "ENERBIO napój owsiany",
+    description: "Napój owsiany z dodatkiem witamin B2, B12 i D",
+    image: "/ENERBIO.webp",
+    price: 19.99,
+    quantity: 1,
+  },
+  {
+    id: "7",
+    name: "INKA Barista",
+    description: "Napój owsiany, bez dodatku cukru, UHT",
+    image: "/INKA-Barista.webp",
+    price: 25.99,
+    quantity: 1,
+  },
+  {
+    id: "8",
+    name: "INKA Kokosowa",
+    description: "Napój kokosowy, bez dodatku cukru, UHT",
+    image: "/INKA-Kokosowa.webp",
+    price: 25.99,
+    quantity: 1,
+  },
+  {
+    id: "9",
+    name: "OATLY",
+    description: "Napój owsiany dla baristów, z dodatkiem witamin i minerałów",
+    image: "/OATLY.webp",
+    price: 24.99,
+    quantity: 1,
+  },
+  {
+    id: "10",
+    name: "ALPRO-Barista",
+    description: "Napój sojowy o smaku waniliowym z witaminą B12",
+    image: "/ALPRO-Barista.webp",
+    price: 24.99,
+    quantity: 1,
+  },
 ]

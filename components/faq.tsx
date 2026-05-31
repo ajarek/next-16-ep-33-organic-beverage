@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import { useState } from "react"
 import { Plus, Minus } from "lucide-react"
 import { faqData } from "@/data/questions-data"
 
@@ -16,14 +16,13 @@ function TitleDoodles() {
 
 function FAQVectorGraphic() {
   return (
-    <div className='relative w-full max-w-[340px] md:max-w-[400px] flex items-center justify-center p-4 hover:scale-102 transition-transform duration-300 ease-out'>
+    <div className='relative w-full max-w-85 md:max-w-100 flex items-center justify-center p-4 hover:scale-102 transition-transform duration-300 ease-out'>
       <svg
         viewBox='0 0 420 320'
         className='w-full h-auto drop-shadow-xl select-none overflow-visible'
         xmlns='http://www.w3.org/2000/svg'
       >
         <defs>
-
           <linearGradient id='faqGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
             <stop offset='0%' stopColor='#60A5FA' />
             <stop offset='100%' stopColor='#2563EB' />
@@ -58,7 +57,6 @@ function FAQVectorGraphic() {
           strokeWidth='12'
           strokeLinejoin='round'
         >
-
           <path
             transform='rotate(-6 105 165)'
             d='M65 90 C85 85, 120 85, 140 90 C150 93, 155 105, 145 115 C138 122, 128 122, 120 122 L105 122 L105 145 C115 145, 125 143, 135 147 C142 150, 145 160, 138 168 C132 175, 122 175, 112 175 L105 175 L105 240 C105 255, 75 255, 75 240 L75 110 C75 98, 60 98, 65 90 Z'
@@ -83,7 +81,6 @@ function FAQVectorGraphic() {
           strokeWidth='16'
           strokeLinejoin='round'
         >
-
           <path
             transform='rotate(-6 105 165)'
             d='M65 90 C85 85, 120 85, 140 90 C150 93, 155 105, 145 115 C138 122, 128 122, 120 122 L105 122 L105 145 C115 145, 125 143, 135 147 C142 150, 145 160, 138 168 C132 175, 122 175, 112 175 L105 175 L105 240 C105 255, 75 255, 75 240 L75 110 C75 98, 60 98, 65 90 Z'
@@ -108,7 +105,6 @@ function FAQVectorGraphic() {
           strokeWidth='6.5'
           strokeLinejoin='round'
         >
-
           <path
             transform='rotate(-6 105 165)'
             d='M65 90 C85 85, 120 85, 140 90 C150 93, 155 105, 145 115 C138 122, 128 122, 120 122 L105 122 L105 145 C115 145, 125 143, 135 147 C142 150, 145 160, 138 168 C132 175, 122 175, 112 175 L105 175 L105 240 C105 255, 75 255, 75 240 L75 110 C75 98, 60 98, 65 90 Z'
@@ -128,7 +124,6 @@ function FAQVectorGraphic() {
         </g>
 
         <g fill='url(#faqGrad)'>
-
           <path
             transform='rotate(-6 105 165)'
             d='M65 90 C85 85, 120 85, 140 90 C150 93, 155 105, 145 115 C138 122, 128 122, 120 122 L105 122 L105 145 C115 145, 125 143, 135 147 C142 150, 145 160, 138 168 C132 175, 122 175, 112 175 L105 175 L105 240 C105 255, 75 255, 75 240 L75 110 C75 98, 60 98, 65 90 Z'
@@ -148,7 +143,6 @@ function FAQVectorGraphic() {
         </g>
 
         <g className='animate-float-slow'>
-
           <ellipse
             cx='196'
             cy='115'
@@ -220,7 +214,6 @@ function FAQVectorGraphic() {
 }
 
 export default function FAQ() {
-
   const [activeIndex, setActiveIndex] = useState<number | null>(0)
 
   const toggleIndex = (index: number) => {
@@ -229,7 +222,6 @@ export default function FAQ() {
 
   return (
     <section className='relative w-full max-w-7xl mx-auto px-4 py-16 md:py-24 text-center overflow-visible z-20'>
-
       <div className='inline-flex items-center gap-1.5 bg-oat-yellow neo-border rounded-xl px-5 py-2 shadow-[3.5px_3.5px_0px_#000] mb-6 hover:scale-105 transition-transform duration-200 cursor-default select-none'>
         <span className='font-heading font-black text-xs md:text-sm uppercase tracking-widest text-black'>
           Masz pytania?
@@ -246,7 +238,6 @@ export default function FAQ() {
       </div>
 
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full max-w-6xl mx-auto text-left relative z-10'>
-
         <div className='lg:col-span-5 flex justify-center items-center w-full'>
           <FAQVectorGraphic />
         </div>
@@ -260,7 +251,6 @@ export default function FAQ() {
                 key={index}
                 className='bg-[#FAF8F5] rounded-3xl border-3 border-black shadow-[4.5px_4.5px_0px_#000] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000] overflow-hidden'
               >
-
                 <button
                   onClick={() => toggleIndex(index)}
                   aria-expanded={isOpen}

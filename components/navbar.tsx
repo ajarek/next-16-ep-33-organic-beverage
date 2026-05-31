@@ -41,9 +41,7 @@ export default function Navbar() {
 
   return (
     <header className='w-full max-w-7xl mx-auto px-4 pt-6 md:px-6 md:pt-8 z-50 sticky top-0 bg-transparent'>
-
       <div className='w-full bg-background/80 backdrop-blur-sm neo-border rounded-full py-3 px-6 md:px-8 flex items-center justify-between shadow-[5px_5px_0px_0px_#000000] hover:shadow-[7px_7px_0px_0px_#000000] transition-all duration-300'>
-
         <Link href='/' className='flex items-center gap-2 group'>
           <span className='font-heading text-2xl md:text-3xl font-black tracking-tighter text-black select-none group-hover:scale-105 transition-transform duration-200'>
             Owsiane
@@ -68,7 +66,6 @@ export default function Navbar() {
         </nav>
 
         <div className='flex items-center gap-2 md:gap-3'>
-
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
             className='w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer'

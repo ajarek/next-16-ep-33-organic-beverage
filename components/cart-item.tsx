@@ -9,14 +9,13 @@ const CartItem = ({ item }: { item: Product }) => {
   const { increment, decrement, removeItemFromCart } = useCartStore()
 
   return (
-    <div className='group relative bg-white neo-border neo-shadow p-4 flex flex-col sm:flex-row items-center gap-6 transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'>
-
+    <div className='group relative bg-white neo-border neo-shadow p-4 flex flex-col sm:flex-row items-center gap-6 transition-all hover:-translate-x-2px hover:-translate-y-2px hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'>
       <div className='relative w-32 h-32 sm:w-24 sm:h-24 shrink-0 bg-oat-cream neo-border-sm overflow-hidden'>
         <Image
           src={item.image}
           alt={item.name}
           fill
-          sizes="(max-width: 768px) 100vw, 33vw"
+          sizes='(max-width: 768px) 100vw, 33vw'
           className='object-contain p-2 group-hover:scale-110 transition-transform duration-300'
         />
       </div>

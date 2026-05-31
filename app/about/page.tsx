@@ -156,14 +156,11 @@ const stats = [
 ]
 
 export default function AboutUsPage() {
-
   const router = useRouter()
 
   return (
     <div className='w-full flex-1 flex flex-col items-center overflow-hidden'>
-
       <section className='relative w-full max-w-7xl mx-auto px-4 md:px-6 pt-12 pb-16 md:pt-20 md:pb-24 flex flex-col items-center text-center overflow-hidden'>
-
         <StarDoodle className='absolute top-8 left-[4%] w-20 h-20 text-[#EADEC6] opacity-40 -z-10 animate-float pointer-events-none hidden lg:block' />
         <StarDoodle className='absolute bottom-12 right-[6%] w-28 h-28 text-[#EADEC6] opacity-30 -z-10 animate-float-slow pointer-events-none hidden lg:block' />
 
@@ -208,7 +205,6 @@ export default function AboutUsPage() {
 
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 pb-20'>
         <div className='relative grid grid-cols-1 md:grid-cols-3 gap-5'>
-
           <div className='md:col-span-2 relative rounded-3xl overflow-hidden neo-border shadow-[6px_6px_0px_#000] aspect-ratio-16/9 group'>
             <Image
               src='/ekipa.png'
@@ -273,7 +269,6 @@ export default function AboutUsPage() {
       </section>
 
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20'>
-
         <div className='flex flex-col items-center text-center mb-14'>
           <div className='inline-flex items-center gap-2 bg-[#9FD8F4] neo-border rounded-xl px-5 py-2 shadow-[3px_3px_0px_#000] mb-6'>
             <Leaf className='size-4 stroke-[2.5] text-black' />
@@ -315,7 +310,6 @@ export default function AboutUsPage() {
       </section>
 
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20'>
-
         <div className='flex flex-col items-center text-center mb-14'>
           <div className='inline-flex items-center gap-2 bg-oat-pink neo-border rounded-xl px-5 py-2 shadow-[3px_3px_0px_#000] mb-6'>
             <Zap className='size-4 stroke-[2.5] text-white' />
@@ -332,7 +326,6 @@ export default function AboutUsPage() {
         </div>
 
         <div className='relative'>
-
           <div className='hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-black -translate-x-1/2 rounded-full' />
 
           <div className='flex flex-col gap-8 md:gap-0'>
@@ -345,7 +338,6 @@ export default function AboutUsPage() {
                     isLeft ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
-
                   <div
                     className={`flex-1 ${isLeft ? "md:pr-12 md:text-right" : "md:pl-12 md:text-left"}`}
                   >
@@ -392,7 +384,6 @@ export default function AboutUsPage() {
       </section>
 
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20'>
-
         <div className='flex flex-col items-center text-center mb-14'>
           <div className='inline-flex items-center gap-2 bg-[#E1F3D8] neo-border rounded-xl px-5 py-2 shadow-[3px_3px_0px_#000] mb-6'>
             <Users className='size-4 stroke-[2.5] text-black' />
@@ -415,7 +406,6 @@ export default function AboutUsPage() {
               key={member.name}
               className='group flex flex-col neo-border rounded-3xl overflow-hidden shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-y-2 transition-all duration-300'
             >
-
               <div
                 className={`${member.bg} flex items-center justify-center py-10 text-7xl border-b-[3px] border-black group-hover:scale-105 transition-transform duration-500 origin-bottom`}
               >
@@ -440,12 +430,10 @@ export default function AboutUsPage() {
 
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16'>
         <div className='relative bg-[#E1F3D8] neo-border-lg rounded-[40px] overflow-hidden p-8 md:p-14 shadow-[8px_8px_0px_#000]'>
-
           <StarDoodle className='absolute top-4 right-8 w-16 h-16 text-oat-green/20 pointer-events-none' />
           <StarDoodle className='absolute bottom-6 left-6 w-24 h-24 text-oat-green/10 pointer-events-none' />
 
           <div className='relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-16'>
-
             <div className='flex-1 text-left'>
               <div className='inline-flex items-center gap-2 bg-oat-green neo-border rounded-xl px-4 py-1.5 shadow-[3px_3px_0px_#000] mb-6'>
                 <Leaf className='size-4 stroke-[2.5] text-white' />
@@ -543,7 +531,6 @@ export default function AboutUsPage() {
 
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-
           <button
             id='about-us-cta-shop'
             onClick={() => router.push("/shop")}
