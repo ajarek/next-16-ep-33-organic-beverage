@@ -1,3 +1,4 @@
+
 // nosemgrep: typescript.react.portability.i18next.jsx-not-internationalized
 import type { Metadata } from "next"
 import Link from "next/link"

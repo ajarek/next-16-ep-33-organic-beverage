@@ -4,7 +4,6 @@ import React from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 
-// Sparkle/Gwiazdka neobrutalistyczna
 function SparkleIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -17,7 +16,6 @@ function SparkleIcon({ className }: { className?: string }) {
   )
 }
 
-// Ozdobna gwiazda wieloramienna w tle
 function StarDoodle({ className }: { className?: string }) {
   return (
     <svg viewBox='0 0 100 100' className={className} fill='currentColor'>
@@ -57,7 +55,7 @@ function FlavorCard({
       style={{ backgroundColor: bgColor }}
       className='group relative rounded-[32px] border-3 border-black shadow-[6px_6px_0px_#000] p-6 pb-0 flex flex-col justify-between overflow-hidden h-[460px] cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-[9px_9px_0px_#000]'
     >
-      {/* NAGŁÓWEK KARTY */}
+
       <div className='flex flex-col text-left z-10'>
         <h3
           className={`font-heading font-black text-3xl md:text-[34px] tracking-tight mb-2 ${textColorClass}`}
@@ -71,14 +69,12 @@ function FlavorCard({
         </p>
       </div>
 
-      {/* GRAFIKA PRODUKTU I KOŁO W TLE */}
       <div className='relative flex-1 w-full flex items-center justify-center min-h-[190px] z-10'>
-        {/* Okrągły blob w tle (żółty/kremowy) */}
+
         {hasCircleBlob && (
           <div className='absolute top-[15%] right-[10%] w-[130px] h-[130px] rounded-full bg-[#FFE89E] opacity-75 -z-10 group-hover:scale-110 transition-transform duration-500' />
         )}
 
-        {/* Obrazek smaku */}
         <div className='relative w-full h-[250px] md:h-[170px] select-none group-hover:scale-108 transition-transform duration-500'>
           <Image
             src={imageSrc}
@@ -90,7 +86,6 @@ function FlavorCard({
         </div>
       </div>
 
-      {/* DOLNY PRZYCISK "Spróbuj Teraz" */}
       <div
         style={{ backgroundColor: btnBgColor }}
         className={`w-[calc(100%+3rem)] -mx-6 mt-auto border-t-3 border-black text-center py-4 font-heading font-black text-lg select-none uppercase tracking-wide transition-all duration-300 group-hover:bg-black group-hover:text-white ${btnTextColorClass}`}
@@ -104,7 +99,7 @@ function FlavorCard({
 export default function FlavorExplosion() {
   return (
     <section className='relative w-full max-w-7xl mx-auto px-4 py-16 md:py-24 overflow-hidden text-center'>
-      {/* ── FALISTA WSTĘGA W TLE ── */}
+
       <svg
         className='absolute inset-0 w-full h-full -z-20 pointer-events-none overflow-hidden hidden md:block'
         viewBox='0 0 1440 800'
@@ -124,12 +119,10 @@ export default function FlavorExplosion() {
         />
       </svg>
 
-      {/* ── DEKORACYJNA GWIAZDA W TLE ── */}
       <StarDoodle className='absolute top-[8%] left-[4%] w-24 h-24 text-[#EADEC6] opacity-35 -z-10 animate-float pointer-events-none hidden lg:block' />
 
-      {/* ── NAGŁÓWEK SEKCJI ── */}
       <div className='flex flex-col items-center mb-12 md:mb-16 relative z-10'>
-        {/* Etykieta (Badge) */}
+
         <div className='inline-flex items-center gap-1.5 bg-oat-yellow neo-border rounded-xl px-5 py-1.5 shadow-[3.5px_3.5px_0px_#000] mb-6 hover:scale-105 transition-transform duration-200'>
           <SparkleIcon className='size-3.5' />
           <span className='font-heading font-black text-xs md:text-sm uppercase tracking-widest text-black'>
@@ -137,9 +130,8 @@ export default function FlavorExplosion() {
           </span>
         </div>
 
-        {/* Tytuł z niebieskimi kreskami ozdobnymi */}
         <div className='relative inline-flex items-center justify-center'>
-          {/* Niebieskie kreski (Doodles) po lewej stronie tytułu */}
+
           <div className='absolute -left-10 md:-left-12 -top-6 hidden sm:flex flex-col gap-1 -rotate-12deg animate-wiggle'>
             <span className='w-1.5 h-5 bg-oat-blue rounded-full block' />
             <span className='w-1.5 h-5 bg-oat-blue rounded-full block rotate-25deg' />
@@ -152,9 +144,8 @@ export default function FlavorExplosion() {
         </div>
       </div>
 
-      {/* ── SIATKA KART SMAKÓW ── */}
       <div className='relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto mt-4 px-2'>
-        {/* KARTA CZEKOLADA */}
+
         <FlavorCard
           title='Czekolada'
           subtext='Aksamitne kakao połączone z najwyższej jakości owsem premium'
@@ -164,10 +155,9 @@ export default function FlavorExplosion() {
           textColorClass='text-white'
           subtextColorClass='text-neutral-200'
           btnTextColorClass='text-white'
-          hasCircleBlob={false} // W oryginale czekolada nie ma wyraźnego żółtego koła, ale ładnie kontrastuje z brązem
+          hasCircleBlob={false}
         />
 
-        {/* KARTA MATCHA */}
         <FlavorCard
           title='Matcha'
           subtext='Tradycyjna japońska zielona herbata premium o głębokim aromacie'
@@ -180,7 +170,6 @@ export default function FlavorExplosion() {
           hasCircleBlob={true}
         />
 
-        {/* KARTA TRUSKAWKA */}
         <FlavorCard
           title='Truskawka'
           subtext='Prawdziwe, soczyste kawałki słodkich truskawek prosto z natury'
@@ -193,7 +182,6 @@ export default function FlavorExplosion() {
           hasCircleBlob={true}
         />
 
-        {/* KARTA WANILIA */}
         <FlavorCard
           title='Wanilia'
           subtext='Szlachetny ekstrakt z wyselekcjonowanych lasek wanilii z Madagaskaru'

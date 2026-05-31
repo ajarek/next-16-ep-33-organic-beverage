@@ -14,8 +14,6 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 
-// ── HELPERS ──────────────────────────────────────────────────────────────────
-
 function SparkleIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -35,8 +33,6 @@ function StarDoodle({ className }: { className?: string }) {
     </svg>
   )
 }
-
-// ── DANE ─────────────────────────────────────────────────────────────────────
 
 const timeline = [
   {
@@ -159,20 +155,18 @@ const stats = [
   { value: "100%", label: "Polskie owsiane źródła", icon: "🌾" },
 ]
 
-// ── PAGE ──────────────────────────────────────────────────────────────────────
-
 export default function AboutUsPage() {
+
   const router = useRouter()
 
   return (
     <div className='w-full flex-1 flex flex-col items-center overflow-hidden'>
-      {/* ═══════════════════════════════════════════════════════════ HERO */}
+
       <section className='relative w-full max-w-7xl mx-auto px-4 md:px-6 pt-12 pb-16 md:pt-20 md:pb-24 flex flex-col items-center text-center overflow-hidden'>
-        {/* Dekoracyjne gwiazdki w tle */}
+
         <StarDoodle className='absolute top-8 left-[4%] w-20 h-20 text-[#EADEC6] opacity-40 -z-10 animate-float pointer-events-none hidden lg:block' />
         <StarDoodle className='absolute bottom-12 right-[6%] w-28 h-28 text-[#EADEC6] opacity-30 -z-10 animate-float-slow pointer-events-none hidden lg:block' />
 
-        {/* Badge */}
         <div className='inline-flex items-center gap-2 bg-oat-yellow neo-border rounded-xl px-5 py-2 shadow-[3.5px_3.5px_0px_#000] mb-8 hover:scale-105 transition-transform duration-200'>
           <Heart className='size-4 fill-black stroke-black' />
           <span className='font-heading font-black text-xs md:text-sm uppercase tracking-widest text-black'>
@@ -180,7 +174,6 @@ export default function AboutUsPage() {
           </span>
         </div>
 
-        {/* Heading */}
         <h1 className='font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-black tracking-tight leading-none max-w-4xl'>
           Robimy mleko
           <br />
@@ -199,7 +192,6 @@ export default function AboutUsPage() {
           to cały nasz sekret.
         </p>
 
-        {/* Floating stickers */}
         <div className='absolute top-[15%] right-[8%] bg-white neo-border rounded-2xl px-4 py-2.5 shadow-[3px_3px_0px_#000] rotate-6 z-10 animate-float text-sm font-black hidden md:flex items-center gap-1.5'>
           <Sprout className='size-4 text-oat-green' /> Made in Poland 🇵🇱
         </div>
@@ -207,7 +199,6 @@ export default function AboutUsPage() {
           <Star className='size-4 fill-black stroke-none' /> 100% Bio
         </div>
 
-        {/* Sparkle decorations */}
         <div className='mt-10 flex gap-6 items-center'>
           <SparkleIcon className='animate-float' />
           <SparkleIcon className='animate-wiggle' />
@@ -215,10 +206,9 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ HERO IMAGE COLLAGE */}
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 pb-20'>
         <div className='relative grid grid-cols-1 md:grid-cols-3 gap-5'>
-          {/* Duże zdjęcie po lewej */}
+
           <div className='md:col-span-2 relative rounded-3xl overflow-hidden neo-border shadow-[6px_6px_0px_#000] aspect-ratio-16/9 group'>
             <Image
               src='/ekipa.png'
@@ -228,13 +218,12 @@ export default function AboutUsPage() {
               sizes='(max-width: 768px) 100vw, 66vw'
               priority
             />
-            {/* Overlay label */}
+
             <div className='absolute bottom-4 left-4 bg-oat-yellow neo-border rounded-2xl px-5 py-2.5 shadow-[3px_3px_0px_#000] font-black text-sm text-black'>
               ☕ Robimy to z miłością
             </div>
           </div>
 
-          {/* Małe zdjęcia po prawej */}
           <div className='flex flex-col gap-5'>
             <div className='relative rounded-3xl overflow-hidden neo-border shadow-[6px_6px_0px_#000] aspect-square group'>
               <Image
@@ -260,7 +249,6 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════ STATS BAR */}
       <section className='w-full bg-black border-y border-black py-10 mb-8'>
         <div className='max-w-7xl mx-auto px-4 md:px-6'>
           <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8'>
@@ -284,9 +272,8 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════ VALUES */}
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20'>
-        {/* Section header */}
+
         <div className='flex flex-col items-center text-center mb-14'>
           <div className='inline-flex items-center gap-2 bg-[#9FD8F4] neo-border rounded-xl px-5 py-2 shadow-[3px_3px_0px_#000] mb-6'>
             <Leaf className='size-4 stroke-[2.5] text-black' />
@@ -327,9 +314,8 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════ TIMELINE */}
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20'>
-        {/* Header */}
+
         <div className='flex flex-col items-center text-center mb-14'>
           <div className='inline-flex items-center gap-2 bg-oat-pink neo-border rounded-xl px-5 py-2 shadow-[3px_3px_0px_#000] mb-6'>
             <Zap className='size-4 stroke-[2.5] text-white' />
@@ -345,9 +331,8 @@ export default function AboutUsPage() {
           </h2>
         </div>
 
-        {/* Timeline grid */}
         <div className='relative'>
-          {/* Vertical line (desktop) */}
+
           <div className='hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-black -translate-x-1/2 rounded-full' />
 
           <div className='flex flex-col gap-8 md:gap-0'>
@@ -360,7 +345,7 @@ export default function AboutUsPage() {
                     isLeft ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
-                  {/* Content card */}
+
                   <div
                     className={`flex-1 ${isLeft ? "md:pr-12 md:text-right" : "md:pl-12 md:text-left"}`}
                   >
@@ -390,7 +375,6 @@ export default function AboutUsPage() {
                     </div>
                   </div>
 
-                  {/* Center dot */}
                   <div className='hidden md:flex items-center justify-center w-10 shrink-0 z-10'>
                     <div
                       className={`${item.color} neo-border rounded-full size-10 flex items-center justify-center shadow-[3px_3px_0px_#000] font-black text-lg`}
@@ -399,7 +383,6 @@ export default function AboutUsPage() {
                     </div>
                   </div>
 
-                  {/* Empty side */}
                   <div className='flex-1 hidden md:block' />
                 </div>
               )
@@ -408,9 +391,8 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════════════════ ZESPÓŁ */}
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20'>
-        {/* Header */}
+
         <div className='flex flex-col items-center text-center mb-14'>
           <div className='inline-flex items-center gap-2 bg-[#E1F3D8] neo-border rounded-xl px-5 py-2 shadow-[3px_3px_0px_#000] mb-6'>
             <Users className='size-4 stroke-[2.5] text-black' />
@@ -433,13 +415,13 @@ export default function AboutUsPage() {
               key={member.name}
               className='group flex flex-col neo-border rounded-3xl overflow-hidden shadow-[5px_5px_0px_#000] hover:shadow-[8px_8px_0px_#000] hover:-translate-y-2 transition-all duration-300'
             >
-              {/* Avatar */}
+
               <div
                 className={`${member.bg} flex items-center justify-center py-10 text-7xl border-b-[3px] border-black group-hover:scale-105 transition-transform duration-500 origin-bottom`}
               >
                 {member.emoji}
               </div>
-              {/* Info */}
+
               <div className='bg-white p-5 flex flex-col flex-1'>
                 <p className='font-heading text-lg font-black text-black'>
                   {member.name}
@@ -456,15 +438,14 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════ ECO COMMITMENT VISUAL BLOCK */}
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16'>
         <div className='relative bg-[#E1F3D8] neo-border-lg rounded-[40px] overflow-hidden p-8 md:p-14 shadow-[8px_8px_0px_#000]'>
-          {/* Background doodles */}
+
           <StarDoodle className='absolute top-4 right-8 w-16 h-16 text-oat-green/20 pointer-events-none' />
           <StarDoodle className='absolute bottom-6 left-6 w-24 h-24 text-oat-green/10 pointer-events-none' />
 
           <div className='relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-16'>
-            {/* Text */}
+
             <div className='flex-1 text-left'>
               <div className='inline-flex items-center gap-2 bg-oat-green neo-border rounded-xl px-4 py-1.5 shadow-[3px_3px_0px_#000] mb-6'>
                 <Leaf className='size-4 stroke-[2.5] text-white' />
@@ -512,7 +493,6 @@ export default function AboutUsPage() {
               </div>
             </div>
 
-            {/* Visual: stacked eco cards */}
             <div className='relative w-full max-w-sm shrink-0 h-72 flex items-center justify-center'>
               <div className='absolute top-0 left-[10%] bg-oat-yellow neo-border rounded-3xl p-5 shadow-[5px_5px_0px_#000] -rotate-6deg w-52 text-center'>
                 <span className='text-4xl'>🌾</span>
@@ -537,7 +517,6 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════ MANIFEST */}
       <section className='w-full bg-oat-yellow border-y border-black py-16 md:py-24 my-8'>
         <div className='max-w-4xl mx-auto px-4 md:px-6 text-center'>
           <p className='font-heading text-4xl sm:text-5xl md:text-6xl font-black text-black leading-[1.1] tracking-tight'>
@@ -562,10 +541,9 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════ CTA */}
       <section className='w-full max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-          {/* CTA 1: Sklep */}
+
           <button
             id='about-us-cta-shop'
             onClick={() => router.push("/shop")}
@@ -586,7 +564,6 @@ export default function AboutUsPage() {
             </div>
           </button>
 
-          {/* CTA 2: Kontakt */}
           <button
             id='about-us-cta-contact'
             onClick={() => router.push("/contact")}

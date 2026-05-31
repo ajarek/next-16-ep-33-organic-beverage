@@ -10,7 +10,7 @@ const CartItem = ({ item }: { item: Product }) => {
 
   return (
     <div className='group relative bg-white neo-border neo-shadow p-4 flex flex-col sm:flex-row items-center gap-6 transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]'>
-      {/* Product Image */}
+
       <div className='relative w-32 h-32 sm:w-24 sm:h-24 shrink-0 bg-oat-cream neo-border-sm overflow-hidden'>
         <Image
           src={item.image}
@@ -21,15 +21,13 @@ const CartItem = ({ item }: { item: Product }) => {
         />
       </div>
 
-      {/* Product Details */}
       <div className='grow text-center sm:text-left'>
         <h3 className='font-heading font-black text-xl mb-1'>{item.name}</h3>
         <p className='text-muted-foreground font-medium'>
           {item.price.toFixed(2)} zł / szt.
         </p>
       </div>
-    
-      {/* Quantity Controls */}
+
       <div className='flex items-center gap-3 bg-oat-cream neo-border-sm p-1'>
         <button
           onClick={() => decrement(item.id)}
@@ -50,7 +48,6 @@ const CartItem = ({ item }: { item: Product }) => {
         </button>
       </div>
 
-      {/* Total Price & Remove */}
       <div className='flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end'>
         <div className='text-right'>
           <p className='font-black text-xl'>

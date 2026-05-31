@@ -70,5 +70,4 @@ export const testimonialsData = [
     motto:"Miłośnik kawy"
 },
 
-
 ]

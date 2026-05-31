@@ -53,7 +53,7 @@ export default function ContactPage() {
 
             <form className="mt-10 grid gap-5" onSubmit={(e) => {
                  e.preventDefault();
-                  toast.success("Wiadomość wysłana!"); 
+                  toast.success("Wiadomość wysłana!");
                   e.currentTarget.reset();
                   }}>
               <label className="flex flex-col gap-2 text-sm font-semibold text-neutral-800">

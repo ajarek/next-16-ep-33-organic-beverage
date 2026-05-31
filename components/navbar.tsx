@@ -41,9 +41,9 @@ export default function Navbar() {
 
   return (
     <header className='w-full max-w-7xl mx-auto px-4 pt-6 md:px-6 md:pt-8 z-50 sticky top-0 bg-transparent'>
-      {/* Główny kontener paska nawigacji */}
+
       <div className='w-full bg-background/80 backdrop-blur-sm neo-border rounded-full py-3 px-6 md:px-8 flex items-center justify-between shadow-[5px_5px_0px_0px_#000000] hover:shadow-[7px_7px_0px_0px_#000000] transition-all duration-300'>
-        {/* LOGO */}
+
         <Link href='/' className='flex items-center gap-2 group'>
           <span className='font-heading text-2xl md:text-3xl font-black tracking-tighter text-black select-none group-hover:scale-105 transition-transform duration-200'>
             Owsiane
@@ -53,7 +53,6 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* NAWIGACJA DESKTOP */}
         <nav className='hidden lg:flex items-center gap-8 font-semibold text-sm xl:text-base text-black'>
           {menuItems.map((item) => (
             <Link
@@ -62,15 +61,14 @@ export default function Navbar() {
               className='relative py-1 group transition-colors duration-200 hover:text-yellow-600'
             >
               {item.label}
-              {/* Animowane neobrutalistyczne podkreślenie */}
+
               <span className='absolute bottom-0 left-0 w-0 h-0.75 bg-black transition-all duration-200 group-hover:w-full'></span>
             </Link>
           ))}
         </nav>
 
-        {/* PRZYCISKI AKCJI (PRAWA STRONA) */}
         <div className='flex items-center gap-2 md:gap-3'>
-          {/* Przycisk Wyszukaj */}
+
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
             className='w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer'
@@ -79,21 +77,18 @@ export default function Navbar() {
             <Search className='size-4 md:size-5 stroke-[2.5]' />
           </button>
 
-          {/* Przycisk Koszyka */}
           <Link
             href='/cart'
             className='relative w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer group'
           >
             <ShoppingCart className='size-4 md:size-5 stroke-[2.5]' />
-            {/* Licznik w koszyku */}
+
             {cartCount > 0 && (
               <span className='absolute -top-1.5 -right-1.5 size-5 bg-oat-pink text-white rounded-full neo-border text-[10px] font-bold flex items-center justify-center shadow-[1px_1px_0px_#000] group-hover:scale-110 transition-transform'>
                 {cartCount}
               </span>
             )}
           </Link>
-
-          {/* Przycisk Konta Użytkownika */}
 
           <Show when='signed-out'>
             <SignUpButton>
@@ -108,7 +103,7 @@ export default function Navbar() {
           <Show when='signed-in'>
             <UserButton />
           </Show>
-          {/* MENU MOBILNE (TRIGGER) */}
+
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -149,7 +144,6 @@ export default function Navbar() {
                 </nav>
               </div>
 
-              {/* Dolna sekcja w menu mobilnym */}
               <div className='flex flex-col gap-4'>
                 <div className='p-4 rounded-xl border-2 border-black shadow-[3px_3px_0px_#000] text-center'>
                   <p className='font-bold text-sm mb-1 text-black'>
@@ -171,7 +165,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* PASEK WYSZUKIWANIA (ESTETYCZNY ROZWIJANY BANER) */}
       {isSearchOpen && (
         <form
           onSubmit={handleSearch}

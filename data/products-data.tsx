@@ -8,7 +8,7 @@ export const products: Product[] = [
         image:"/ALNATURA-Wanilia.webp",
         price:19.99,
         quantity:1,
-        
+
     },
     {
         id:"2",
@@ -17,7 +17,7 @@ export const products: Product[] = [
         image:"/ALMOND-BREEZE.webp",
         price:24.99,
         quantity:1,
-        
+
     },
     {
         id:"3",
@@ -26,7 +26,7 @@ export const products: Product[] = [
         image:"/ALNATURA.webp",
         price:21.99,
         quantity:1,
-        
+
     },
     {
         id:"4",
@@ -35,7 +35,7 @@ export const products: Product[] = [
         image:"/ALPRO-Barista-Migdał.webp",
         price:29.99,
         quantity:1,
-        
+
     },
     {
         id:"5",
@@ -44,7 +44,7 @@ export const products: Product[] = [
         image:"/ALPRO-Barista.webp",
         price:19.99,
         quantity:1,
-       
+
     },
     {
         id:"6",
@@ -53,7 +53,7 @@ export const products: Product[] = [
         image:"/ENERBIO.webp",
         price:19.99,
         quantity:1,
-       
+
     },
      {
         id:"7",
@@ -62,7 +62,7 @@ export const products: Product[] = [
         image:"/INKA-Barista.webp",
         price:25.99,
         quantity:1,
-       
+
     },
      {
         id:"8",
@@ -71,7 +71,7 @@ export const products: Product[] = [
         image:"/INKA-Kokosowa.webp",
         price:25.99,
         quantity:1,
-       
+
     },
     {
         id:"9",
@@ -80,7 +80,7 @@ export const products: Product[] = [
         image:"/OATLY.webp",
         price:24.99,
         quantity:1,
-       
+
     },
     {
         id:"10",
@@ -89,6 +89,6 @@ export const products: Product[] = [
         image:"/ALPRO-Barista.webp",
         price:24.99,
         quantity:1,
-       
+
     },
 ]

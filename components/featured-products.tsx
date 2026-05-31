@@ -7,17 +7,15 @@ import { products } from "@/data/products-data"
 import { useCartStore } from "@/store/cartStore"
 import { toast } from "sonner"
 
-// Only first 6 products
 const featuredProducts = products.slice(0, 6)
 
-// Card background colors cycling through the app's palette
 const cardBgs = [
-  "#FCF3DB", // warm cream
-  "#FFC72C", // oat-yellow (active/featured)
-  "#E8F4FD", // light blue
-  "#E1F3D8", // light green
-  "#FDE8F4", // light pink
-  "#F0EEFF", // light lavender
+  "#FCF3DB",
+  "#FFC72C",
+  "#E8F4FD",
+  "#E1F3D8",
+  "#FDE8F4",
+  "#F0EEFF",
 ]
 
 function SparkleIcon({ className }: { className?: string }) {
@@ -43,7 +41,7 @@ export default function FeaturedProducts() {
       (i) => (i - 1 + featuredProducts.length) % featuredProducts.length,
     )
   const next = () => setActiveIndex((i) => (i + 1) % featuredProducts.length)
-  // Touch / mouse drag support
+
   const onDragStart = (clientX: number) => {
     setIsDragging(true)
     dragStartX.current = clientX
@@ -62,9 +60,9 @@ export default function FeaturedProducts() {
 
   return (
     <section className='relative w-full max-w-7xl mx-auto px-4 py-12 md:py-20 overflow-hidden'>
-      {/* ── SECTION HEADER ── */}
+
       <div className='flex flex-col items-center text-center mb-10 md:mb-14'>
-        {/* Badge */}
+
         <div className='inline-flex items-center gap-1.5 bg-oat-yellow neo-border rounded-full px-5 py-1.5 shadow-[3px_3px_0px_#000] mb-4'>
           <SparkleIcon className='size-3.5' />
           <span className='font-heading font-bold text-sm uppercase tracking-widest text-black'>
@@ -72,9 +70,8 @@ export default function FeaturedProducts() {
           </span>
         </div>
 
-        {/* Title */}
         <div className='flex items-center gap-3'>
-          {/* Decorative doodle ticks */}
+
           <span className='hidden sm:flex flex-col gap-1 -rotate-12 opacity-80'>
             <span className='w-1.5 h-5 bg-oat-blue rounded-full block' />
             <span className='w-1.5 h-5 bg-oat-blue rounded-full block rotate-20deg' />
@@ -86,7 +83,6 @@ export default function FeaturedProducts() {
         </div>
       </div>
 
-      {/* ── CAROUSEL TRACK ── */}
       <div
         className='relative flex items-center justify-center select-none'
         onMouseDown={(e) => onDragStart(e.clientX)}
@@ -97,7 +93,7 @@ export default function FeaturedProducts() {
         onTouchMove={(e) => onDragMove(e.touches[0].clientX)}
         onTouchEnd={onDragEnd}
       >
-        {/* Left arrow */}
+
         <button
           id='featured-prev-btn'
           onClick={prev}
@@ -107,13 +103,12 @@ export default function FeaturedProducts() {
           <ChevronLeft className='size-5 stroke-3' />
         </button>
 
-        {/* Cards */}
         <div className='flex items-center justify-center gap-4 sm:gap-6 w-full px-14'>
           {featuredProducts.map((product, idx) => {
             const offset =
               (idx - activeIndex + featuredProducts.length) %
               featuredProducts.length
-            // Only render: active (0), neighbours (-1 = last, +1 = next), and partial peek
+
             const normalizedOffset =
               offset > featuredProducts.length / 2
                 ? offset - featuredProducts.length
@@ -143,7 +138,7 @@ export default function FeaturedProducts() {
                 ].join(" ")}
                 style={{ backgroundColor: bg }}
               >
-                {/* Image area */}
+
                 <div
                   className={[
                     "relative w-full overflow-hidden flex items-end justify-center",
@@ -157,7 +152,7 @@ export default function FeaturedProducts() {
                     background: `radial-gradient(ellipse at 50% 40%, ${bg} 30%, ${bg}cc 100%)`,
                   }}
                 >
-                  {/* Decorative circle behind product */}
+
                   <div
                     className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 pointer-events-none'
                     style={{
@@ -176,16 +171,14 @@ export default function FeaturedProducts() {
                     sizes='(max-width: 640px) 240px, 280px'
                   />
 
-                  {/* Rating badge — top left */}
                   <div className='absolute top-3 left-3 flex items-center gap-1 bg-white neo-border rounded-full px-2.5 py-1 shadow-[2px_2px_0px_#000] z-10'>
                     <Star className='size-3.5 fill-oat-yellow text-oat-yellow' />
                     <span className='font-black text-xs text-black'>4.9</span>
                   </div>
                 </div>
 
-                {/* Card body */}
                 <div className='p-4 bg-white border-t-[3px] border-black'>
-                  {/* Price top-right on active */}
+
                   {isActive && (
                     <div className='flex items-start justify-between mb-1'>
                       <div />
@@ -202,10 +195,9 @@ export default function FeaturedProducts() {
                     {product.description}
                   </p>
 
-                  {/* Bottom row */}
                   <div className='mt-3 flex items-center justify-between gap-2'>
                     {isActive ? (
-                      // Active card: full "Add to cart" button
+
                       <button
                         id={`add-to-cart-${product.id}`}
                         className='neo-btn-yellow flex-1 rounded-xl flex items-center justify-center gap-2 py-2.5 text-sm font-black cursor-pointer'
@@ -218,7 +210,7 @@ export default function FeaturedProducts() {
                         Dodaj do koszyka
                       </button>
                     ) : (
-                      // Adjacent cards: price + icon button
+
                       <>
                         <span className='font-heading font-black text-xl text-black'>
                           ${product.price.toFixed(2)}
@@ -239,7 +231,6 @@ export default function FeaturedProducts() {
           })}
         </div>
 
-        {/* Right arrow */}
         <button
           id='featured-next-btn'
           onClick={next}
@@ -250,7 +241,6 @@ export default function FeaturedProducts() {
         </button>
       </div>
 
-      {/* ── DOT INDICATORS ── */}
       <div className='flex justify-center gap-2 mt-8'>
         {featuredProducts.map((_, idx) => (
           <button
@@ -268,7 +258,6 @@ export default function FeaturedProducts() {
         ))}
       </div>
 
-      {/* ── DECORATIVE SPARKLES ── */}
       <SparkleIcon className='absolute top-10 left-8 animate-wiggle opacity-60 hidden md:block' />
       <SparkleIcon className='absolute bottom-16 right-12 animate-float opacity-60 hidden md:block size-6' />
     </section>

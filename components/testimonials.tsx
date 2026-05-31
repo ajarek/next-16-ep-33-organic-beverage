@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react"
 import { ArrowLeft, ArrowRight, Star } from "lucide-react"
 import { testimonialsData } from "@/data/testimonials-data"
 
-// Ozdobne niebieskie kreski (Doodles) po lewej stronie tytułu
 function TitleDoodles() {
   return (
     <div className='absolute -left-8 md:-left-12 -top-5 hidden sm:flex flex-col gap-1 -rotate-12deg animate-wiggle'>
@@ -32,23 +31,23 @@ function TestimonialCard({
   motto,
   index,
 }: TestimonialCardProps) {
-  // Trzy neobrutalistyczne zestawy kolorów z obrazka
+
   const cardStyles = [
     {
-      bg: "#F3CE56", // Ciepły żółty (oat-yellow)
-      avatarBg: "#FFC72C", // Jaśniejszy żółty do kontrastu
+      bg: "#F3CE56",
+      avatarBg: "#FFC72C",
       avatarText: "text-black",
       dotsColor: "rgba(0, 0, 0, 0.05)",
     },
     {
-      bg: "#FA8272", // Koralowa truskawka
-      avatarBg: "#E05E4E", // Ciemniejszy koral
+      bg: "#FA8272",
+      avatarBg: "#E05E4E",
       avatarText: "text-white",
       dotsColor: "rgba(255, 255, 255, 0.12)",
     },
     {
-      bg: "#8EA7E9", // Pastelowy niebieski
-      avatarBg: "#6F88CC", // Ciemniejszy niebieski
+      bg: "#8EA7E9",
+      avatarBg: "#6F88CC",
       avatarText: "text-white",
       dotsColor: "rgba(255, 255, 255, 0.15)",
     },
@@ -65,16 +64,16 @@ function TestimonialCard({
       }}
       className='relative rounded-[32px] border-3 border-black shadow-[6px_6px_0px_#000] p-6 pt-9 flex flex-col justify-between overflow-visible min-h-[250px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0px_#000]'
     >
-      {/* ── NAKŁADAJĄCY SIĘ AWATAR I NAZWISKO ── */}
+
       <div className='absolute -top-6 left-6 z-10 flex items-center'>
-        {/* Koło z inicjałami */}
+
         <div
           style={{ backgroundColor: style.avatarBg }}
           className={`w-12 h-12 rounded-full border-3 border-black flex items-center justify-center font-heading font-black text-sm md:text-base shadow-[2px_2px_0px_#000] z-20 ${style.avatarText}`}
         >
           {initials}
         </div>
-        {/* Plakietka z imieniem i mottem */}
+
         <div
           style={{ backgroundColor: style.bg }}
           className='h-12 -ml-4 pl-6 pr-5 border-3 border-black rounded-full flex flex-col justify-center shadow-[2px_2px_0px_#000] z-10'
@@ -88,7 +87,6 @@ function TestimonialCard({
         </div>
       </div>
 
-      {/* ── GWIAZDKI (OCENA) ── */}
       <div className='flex gap-0.5 mt-2'>
         {Array.from({ length: 5 }).map((_, i) => {
           const isFilled = i < rating
@@ -101,7 +99,6 @@ function TestimonialCard({
         })}
       </div>
 
-      {/* ── TREŚĆ OPINII ── */}
       <p className='text-sm sm:text-base font-bold text-black text-left leading-relaxed mt-4 flex-1'>
         &quot;{review}&quot;
       </p>
@@ -115,7 +112,6 @@ export default function Testimonials() {
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
 
-  // Wykrywanie liczby widocznych kart w zależności od szerokości ekranu
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -150,7 +146,6 @@ export default function Testimonials() {
     setStartIndex((prev) => (prev >= maxStartIndex ? 0 : prev + 1))
   }
 
-  // Obsługa swipe/przeciągania na mobile
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX)
   }
@@ -177,9 +172,9 @@ export default function Testimonials() {
 
   return (
     <section className='relative w-full max-w-7xl mx-auto px-4 py-16 md:py-24 text-center overflow-visible z-20'>
-      {/* ── GŁÓWNY KONTENER CHMURY ── */}
+
       <div className='relative w-full neo-border-lg rounded-[48px] bg-oat-cream p-8 py-16 md:p-12 md:py-20 shadow-[8px_8px_0px_#000] overflow-visible'>
-        {/* Dekoracyjne krawędzie chmury (humps) dla neobrutalistycznego efektu 3D */}
+
         <div className='absolute -top-18px left-[15%] w-16 h-10 bg-oat-cream border-t-4.5 border-black rounded-t-full -z-10' />
         <div className='absolute -top-28px left-[35%] w-24 h-16 bg-oat-cream border-t-4.5 border-black rounded-t-full -z-10' />
         <div className='absolute -top-24px left-[60%] w-20 h-14 bg-oat-cream border-t-4.5 border-black rounded-t-full -z-10' />
@@ -188,14 +183,12 @@ export default function Testimonials() {
         <div className='absolute -bottom-28px left-[45%] w-28 h-18 bg-oat-cream border-b-4.5 border-black rounded-b-full -z-10' />
         <div className='absolute -bottom-20px left-[75%] w-20 h-12 bg-oat-cream border-b-4.5 border-black rounded-b-full -z-10' />
 
-        {/* ── PLAKIETKA BADGE (Testimonials / Opinie) NA GÓRZE ── */}
         <div className='absolute -top-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-primary neo-border rounded-xl px-6 py-2 shadow-[3.5px_3.5px_0px_#000] z-20 hover:scale-105 transition-transform duration-200'>
           <span className='font-heading font-black text-xs md:text-sm uppercase tracking-widest text-black'>
             Opinie
           </span>
         </div>
 
-        {/* ── NAGŁÓWEK ── */}
         <div className='flex flex-col items-center mb-16 relative z-10'>
           <div className='relative inline-flex items-center justify-center'>
             <TitleDoodles />
@@ -205,7 +198,6 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* ── KARUZELA KART ── */}
         <div
           className='relative z-10 w-full overflow-hidden px-1 md:px-2 pt-10 pb-4'
           onTouchStart={handleTouchStart}
@@ -250,7 +242,6 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* ── NAWIGACJA (PRZYCISKI <- I -> NA DOLE CHMURY) ── */}
         <div className='absolute -bottom-7 left-1/2 -translate-x-1/2 flex gap-4 z-40 pointer-events-auto'>
           <button
             onClick={(e) => handlePrev(e)}
