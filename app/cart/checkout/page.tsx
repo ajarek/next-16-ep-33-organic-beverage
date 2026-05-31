@@ -21,7 +21,7 @@ const CheckoutPage = () => {
           Finalizacja zamówienia
         </h1>
 
-        <Link href="/koszyk" className="flex items-center gap-2 font-bold text-muted-foreground hover:text-black transition-colors group">
+        <Link href="/cart" className="flex items-center gap-2 font-bold text-muted-foreground hover:text-black transition-colors group">
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Powrót do koszyka
         </Link>
@@ -36,7 +36,7 @@ const CheckoutPage = () => {
           <p className="text-muted-foreground text-lg font-medium mb-10 max-w-md">
             Dodaj napoje do koszyka, aby przejść do kasy. Nasze roślinne przysmaki czekają!
           </p>
-          <Link href="/sklep" className="neo-btn-blue px-10 py-4 text-xl uppercase tracking-wider flex items-center gap-3">
+          <Link href="/shop" className="neo-btn-blue px-10 py-4 text-xl uppercase tracking-wider flex items-center gap-3">
             Przejdź do sklep
           </Link>
         </div>

@@ -62,12 +62,12 @@ export default function Hero() {
 
         {/* PRZYCISKI AKCJI */}
         <div className="mt-10 flex flex-wrap gap-4 items-center w-full sm:w-auto">
-          <button className="w-full sm:w-auto px-8 py-4 neo-btn bg-oat-yellow text-black text-lg font-black rounded-xl flex items-center justify-center gap-2 group cursor-pointer" onClick={() => router.push("/sklep")}>
+          <button className="w-full sm:w-auto px-8 py-4 neo-btn bg-oat-yellow text-black text-lg font-black rounded-xl flex items-center justify-center gap-2 group cursor-pointer" onClick={() => router.push("/shop")}>
             Kup Teraz
             <ArrowRight className="size-5 group-hover:translate-x-1.5 transition-transform stroke-width-3" />
           </button>
           
-          <button className="w-full sm:w-auto px-8 py-4 neo-btn bg-white text-black text-lg font-black rounded-xl flex items-center justify-center gap-2 group cursor-pointer hover:bg-neutral-50" onClick={() => router.push("/przepisy")}>
+          <button className="w-full sm:w-auto px-8 py-4 neo-btn bg-white text-black text-lg font-black rounded-xl flex items-center justify-center gap-2 group cursor-pointer hover:bg-neutral-50" onClick={() => router.push("/recipes")}>
             Poznaj Smaki
             <ArrowRight className="size-5 group-hover:translate-x-1.5 transition-transform stroke-width-3" />
           </button>

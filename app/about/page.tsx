@@ -568,7 +568,7 @@ export default function AboutUsPage() {
           {/* CTA 1: Sklep */}
           <button
             id='about-us-cta-shop'
-            onClick={() => router.push("/sklep")}
+            onClick={() => router.push("/shop")}
             className='group relative bg-black neo-border rounded-3xl p-8 md:p-10 shadow-[6px_6px_0px_0px_#FFC72C] hover:shadow-[10px_10px_0px_0px_#FFC72C] hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:shadow-[3px_3px_0px_0px_#FFC72C] transition-all duration-300 text-left overflow-hidden cursor-pointer'
           >
             <StarDoodle className='absolute -top-4 -right-4 w-28 h-28 text-oat-yellow/10 pointer-events-none' />
@@ -589,7 +589,7 @@ export default function AboutUsPage() {
           {/* CTA 2: Kontakt */}
           <button
             id='about-us-cta-contact'
-            onClick={() => router.push("/kontakt")}
+            onClick={() => router.push("/contact")}
             className='group relative bg-oat-yellow neo-border rounded-3xl p-8 md:p-10 shadow-[6px_6px_0px_#000] hover:shadow-[10px_10px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:shadow-[3px_3px_0px_#000] transition-all duration-300 text-left overflow-hidden cursor-pointer'
           >
             <StarDoodle className='absolute -top-4 -right-4 w-28 h-28 text-black/5 pointer-events-none' />

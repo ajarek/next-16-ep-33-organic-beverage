@@ -53,7 +53,7 @@ function FlavorCard({
 
   return (
     <div
-      onClick={() => router.push("/sklep")}
+      onClick={() => router.push("/shop")}
       style={{ backgroundColor: bgColor }}
       className='group relative rounded-[32px] border-3 border-black shadow-[6px_6px_0px_#000] p-6 pb-0 flex flex-col justify-between overflow-hidden h-[460px] cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-[9px_9px_0px_#000]'
     >

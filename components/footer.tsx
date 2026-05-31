@@ -25,17 +25,17 @@ function SparkleIcon({ className }: { className?: string }) {
 }
 
 const quickLinks = [
-  { label: "Sklep", href: "/sklep" },
-  { label: "Nasza Historia", href: "/o-nas" },
-  { label: "Ekologia", href: "/ekologia" },
-  { label: "Przepisy", href: "/przepisy" },
-  { label: "Znajdź Sklep", href: "/sklepy" },
+  { label: "Shop", href: "/shop" },
+  { label: "Our Story", href: "/about" },
+  { label: "Ecology", href: "/ecology" },
+  { label: "Recipes", href: "/recipes" },
+  { label: "Find a Store", href: "/stores" },
 ];
 
 const supportLinks = [
   { label: "FAQ", href: "/faq" },
   { label: "Wysyłka i Zwroty", href: "/wysylka" },
-  { label: "Kontakt", href: "/kontakt" },
+  { label: "Contact", href: "/contact" },
   { label: "Polityka Prywatności", href: "/prywatnosc" },
   { label: "Regulamin", href: "/regulamin" },
 ];

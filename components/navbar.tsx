@@ -25,18 +25,18 @@ export default function Navbar() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (searchValue.trim()) {
-      router.push(`/sklep?search=${encodeURIComponent(searchValue.trim())}`)
+      router.push(`/shop?search=${encodeURIComponent(searchValue.trim())}`)
       setIsSearchOpen(false)
       setSearchValue("")
     }
   }
 
   const menuItems = [
-    { label: "Sklep", href: "/sklep" },
-    { label: "O nas", href: "/o-nas" },
-    { label: "Kontakt", href: "/kontakt" },
-    { label: "Przepisy", href: "/przepisy" },
-    { label: "Ekologia", href: "/ekologia" },
+    { label: "Sklep", href: "/shop" },
+    { label: "O Nas", href: "/about" },
+    { label: "Kontakt", href: "/contact" },
+    { label: "Przepisy", href: "/recipes" },
+    { label: "Ekologia", href: "/ecology" },
   ]
 
   return (
@@ -81,7 +81,7 @@ export default function Navbar() {
 
           {/* Przycisk Koszyka */}
           <Link
-            href='/koszyk'
+            href='/cart'
             className='relative w-9 h-9 md:w-10 md:h-10 rounded-lg bg-oat-yellow text-black neo-border neo-shadow-sm hover:neo-shadow hover:-translate-x-1 hover:-translate-y-1 active:translate-x-1 active:translate-y-1 active:neo-shadow-sm transition-all duration-200 flex items-center justify-center cursor-pointer group'
           >
             <ShoppingCart className='size-4 md:size-5 stroke-[2.5]' />
@@ -160,7 +160,7 @@ export default function Navbar() {
                   </p>
                 </div>
                 <Link
-                  href='/sklep'
+                  href='/shop'
                   className='w-full py-3 text-center rounded-xl bg-oat-yellow text-black border-2 border-black shadow-[4px_4px_0px_#000] font-black text-sm block active:translate-x-0.5 active:translate-y-0.5 active:shadow-[2px_2px_0px_#000] transition-all'
                 >
                   KUP TERAZ

@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { ArrowRight, Droplet, Globe, Leaf, Recycle, Sprout, Sparkles } from "lucide-react";
 
 export default function EcologyPage() {
@@ -26,14 +26,14 @@ export default function EcologyPage() {
 
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/sklep"
+                href="/shop"
                 className="neo-btn bg-oat-yellow text-black rounded-xl px-7 py-4 font-black inline-flex items-center gap-2 hover:bg-[#f8c308]"
               >
                 Zobacz kolekcję
                 <ArrowRight className="size-4 stroke-3" />
               </Link>
               <Link
-                href="/o-nas"
+                href="/about"
                 className="neo-btn bg-white text-black rounded-xl px-7 py-4 font-black inline-flex items-center gap-2 hover:bg-neutral-100"
               >
                 Nasza historia
@@ -157,7 +157,7 @@ export default function EcologyPage() {
                   Chcesz poczuć, jak smakuje odpowiedzialność? Nasze ekologiczne butelki i kartony to zaproszenie do lepszej codzienności.
                 </p>
                 <Link
-                  href="/sklep"
+                  href="/shop"
                   className="neo-btn bg-oat-blue text-white rounded-xl px-6 py-4 font-black inline-flex items-center gap-2 hover:bg-[#2563eb]"
                 >
                   Kup teraz

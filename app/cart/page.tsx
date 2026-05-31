@@ -38,7 +38,7 @@ const CartPage = () => {
                 </h1>
                 
                 {items.length > 0 && (
-                    <Link href="/sklep" className="flex items-center gap-2 font-bold text-muted-foreground hover:text-black transition-colors group">
+                    <Link href="/shop" className="flex items-center gap-2 font-bold text-muted-foreground hover:text-black transition-colors group">
                         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                         Kontynuuj zakupy
                     </Link>
@@ -56,7 +56,7 @@ const CartPage = () => {
 
                     {/* Summary */}
                     <div className="lg:col-span-1">
-                        <CartSummary checkoutHref="/koszyk/kasa" />
+                        <CartSummary checkoutHref="/cart/checkout" />
                     </div>
                 </div>
             ) : (
@@ -70,7 +70,7 @@ const CartPage = () => {
                         Wygląda na to, że nie dodałeś jeszcze żadnego napoju. 
                         Nasze roślinne baristy czekają na Ciebie!
                     </p>
-                    <Link href="/sklep" className="neo-btn-blue px-10 py-4 text-xl uppercase tracking-wider flex items-center gap-3">
+                    <Link href="/shop" className="neo-btn-blue px-10 py-4 text-xl uppercase tracking-wider flex items-center gap-3">
                         <ShoppingCart className="w-6 h-6" />
                         Przejdź do sklepu
                     </Link>
